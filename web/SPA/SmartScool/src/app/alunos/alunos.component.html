@@ -1,33 +1,80 @@
 <Scool-titulo [titulo]="titulo"></Scool-titulo>
 
-<div *ngIf="alunoSelecionado">
-  aluno selecionado {{alunoSelecionado}}
-  <br>
-  <div *ngIf="maryEspecial">
-    {{maryEspecial}}
+
+
+<div class="row">
+  <div class="col-sm-6" *ngIf="alunoSelecionado">
+
+    <div class="row">
+      <div class="col-sm-10">Aluno Selecionado : {{alunoSelecionado.nome}}</div>
+      <div class="col-sm-2"> <button class="btn btn-warning" (click)="voltar()">Voltar</button> </div>
+    </div>
+
+    <form [formGroup]="alunoForm" (submit)="alunoSubmit()">
+      <div class="form-group">
+        <label for="formGroupExampleInput">Nome</label>
+        <input type="text" formControlName="nome" class="form-control">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Sobrenome</label>
+        <input type="text" formControlName="sobrenome" class="form-control">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Telefone</label>
+        <input type="text" formControlName="telefone" class="form-control">
+      </div>
+      <div class="form-group">
+        <hr>
+        <button class="btn btn-success" [disabled]="!alunoForm.valid">Enviar</button>
+      </div>
+    </form>
   </div>
-  <br>
-  <button class="btn btn-default" (click)="voltar()">
-    Voltar
-  </button>
+
+  <div [ngClass]="{'col-sm-6':alunoSelecionado, 'col-sm-12':!alunoSelecionado}">
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Visualizar</th>
+          <th scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Sobrenome</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of alunos">
+
+          <td><button (click)="alunoSelect(item)" class="btn btn-outline-warning">detalhe</button></td>
+
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.nome}}</td>
+          <td>{{item.sobrenome}}</td>
+          <td>{{item.telefone}}</td>
+          <td>
+            <div class="btn-group">
+
+              <button (click)="openModal(template)" class="btn btn-outline-primary">Professores</button>
+              <button class="btn btn-outline-danger">Desativar</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<div *ngIf="!alunoSelecionado">
-  <table class="table table-hover">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Sobrenome</th>
-        <th scope="col">Telefone</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of alunos" style="cursor: pointer;" (click)="alunoSelect(item)">
-        <th scope="row">{{item.id}}</th>
-        <td>{{item.nome}}</td>
-        <td>{{item.sobrenome}}</td>
-        <td>{{item.telefone}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
+<ng-template #template>
+
+  <div class="modal-body">
+    <Scool-professores></Scool-professores>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      Fechar
+    </button>
+  </div>
+</ng-template>

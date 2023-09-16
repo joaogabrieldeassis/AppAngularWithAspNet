@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Aluno } from '../Models/Aluno';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'Scool-alunos',
@@ -7,12 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlunosComponent implements OnInit {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
+  public modalRef?: BsModalRef;
+  public alunoForm: FormGroup;
   titulo = 'Alunos';
-  public alunoSelecionado = "";
-  public maryEspecial = '';
-  public alunos = [
+  public alunoSelecionado: Aluno | null = null;
+  public textSimple = "";
+  public alunos: Aluno[] = [
     { id: 1, nome: 'João', sobrenome: 'Gabriel', telefone: '23345345' },
     { id: 2, nome: 'Mary', sobrenome: 'Pereira', telefone: '22345345' },
     { id: 3, nome: 'José', sobrenome: 'Augusto', telefone: '23345335' },
@@ -20,16 +25,32 @@ export class AlunosComponent implements OnInit {
     { id: 5, nome: 'Tati', sobrenome: 'Cristina', telefone: '23375345' },
     { id: 6, nome: 'Diego', sobrenome: 'Cunhado', telefone: '23365345' }
   ]
-  alunoSelect(aluno: any) {
-    this.alunoSelecionado = aluno.nome;
-    if (aluno.nome == 'Mary') {
-      this.maryEspecial = 'Você é muitooooooooooooooooooo lindaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+ 
+ 
+ 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+    constructor(private formulario: FormBuilder,
+                private modalService: BsModalService) {
+    this.criarForm();
     }
-    else {
-      this.maryEspecial = '';
-    }
+
+  criarForm() {
+    this.alunoForm = this.formulario.group({
+      nome: ["", Validators.required],
+      sobrenome: ["", Validators.required],
+      telefone: ["", Validators.required]
+    });
+  }
+  alunoSubmit() {
+    console.log(this.alunoForm.value)
+  }
+  alunoSelect(aluno: Aluno) {
+    this.alunoSelecionado = aluno;
+    this.alunoForm.patchValue(aluno);
   }
   voltar() {
-    this.alunoSelecionado = '';
+    this.alunoSelecionado = null;
   }
 }
