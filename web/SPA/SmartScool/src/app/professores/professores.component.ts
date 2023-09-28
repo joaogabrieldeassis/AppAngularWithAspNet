@@ -18,10 +18,10 @@ export class ProfessoresComponent implements OnInit {
   public professorSelecionado: Professor | null = null;
 
   public professores: Professor[] = [
-    { id: 1, nome: 'Erika', disciplina: 'Matematica' },
-    { id: 2, nome: 'Jeosvaldo', disciplina: 'Portugues' },
-    { id: 3, nome: 'Marcia', disciplina: 'Historia' },
-    { id: 4, nome: 'Diogo', disciplina: 'Geografia' }
+    { Id: 1, Nome: 'Erika', Disciplina: 'Matematica' },
+    { Id: 2, Nome: 'Jeosvaldo', Disciplina: 'Portugues' },
+    { Id: 3, Nome: 'Marcia', Disciplina: 'Historia' },
+    { Id: 4, Nome: 'Diogo', Disciplina: 'Geografia' }
   ]
  
   openModal(template: TemplateRef<any>) {

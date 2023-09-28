@@ -18,23 +18,23 @@ export class AlunosComponent implements OnInit {
   public alunoSelecionado: Aluno | null = null;
   public textSimple = "";
   public alunos: Aluno[] = [
-    { id: 1, nome: 'João', sobrenome: 'Gabriel', telefone: '23345345' },
-    { id: 2, nome: 'Mary', sobrenome: 'Pereira', telefone: '22345345' },
-    { id: 3, nome: 'José', sobrenome: 'Augusto', telefone: '23345335' },
-    { id: 4, nome: 'Clarice', sobrenome: 'Teixeira', telefone: '23345745' },
-    { id: 5, nome: 'Tati', sobrenome: 'Cristina', telefone: '23375345' },
-    { id: 6, nome: 'Diego', sobrenome: 'Cunhado', telefone: '23365345' }
+    { Id: 1, Nome: 'João', Sobrenome: 'Gabriel', Telefone: '23345345' },
+    { Id: 2, Nome: 'Mary', Sobrenome: 'Pereira', Telefone: '22345345' },
+    { Id: 3, Nome: 'José', Sobrenome: 'Augusto', Telefone: '23345335' },
+    { Id: 4, Nome: 'Clarice', Sobrenome: 'Teixeira', Telefone: '23345745' },
+    { Id: 5, Nome: 'Tati', Sobrenome: 'Cristina', Telefone: '23375345' },
+    { Id: 6, Nome: 'Diego', Sobrenome: 'Cunhado', Telefone: '23365345' }
   ]
- 
- 
- 
+
+
+
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
-    constructor(private formulario: FormBuilder,
-                private modalService: BsModalService) {
+  constructor(private formulario: FormBuilder,
+    private modalService: BsModalService) {
     this.criarForm();
-    }
+  }
 
   criarForm() {
     this.alunoForm = this.formulario.group({

@@ -4,12 +4,12 @@ namespace SmartScoolApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AlunoController : ControllerBase
+    public class ProfessorController : ControllerBase
     {
         [HttpGet]
-        public IActionResult GettAll()
+        public IActionResult GetAll()
         {
-            return Ok("João");
+            return Ok("Espirito Santo");
         }
     }
 }
