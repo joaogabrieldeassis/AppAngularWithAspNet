@@ -1,5 +1,5 @@
 export class Aluno {
-    Id: number = 0;
+    Id: string = '';
     Nome: string = '';
     Sobrenome: string = '';
     Telefone: string = '';

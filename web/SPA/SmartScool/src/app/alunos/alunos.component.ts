@@ -18,12 +18,12 @@ export class AlunosComponent implements OnInit {
   public alunoSelecionado: Aluno | null = null;
   public textSimple = "";
   public alunos: Aluno[] = [
-    { Id: 1, Nome: 'João', Sobrenome: 'Gabriel', Telefone: '23345345' },
-    { Id: 2, Nome: 'Mary', Sobrenome: 'Pereira', Telefone: '22345345' },
-    { Id: 3, Nome: 'José', Sobrenome: 'Augusto', Telefone: '23345335' },
-    { Id: 4, Nome: 'Clarice', Sobrenome: 'Teixeira', Telefone: '23345745' },
-    { Id: 5, Nome: 'Tati', Sobrenome: 'Cristina', Telefone: '23375345' },
-    { Id: 6, Nome: 'Diego', Sobrenome: 'Cunhado', Telefone: '23365345' }
+    { Id: '1', Nome: 'João', Sobrenome: 'Gabriel', Telefone: '23345345' },
+    { Id: '2', Nome: 'Mary', Sobrenome: 'Pereira', Telefone: '22345345' },
+    { Id: '3', Nome: 'José', Sobrenome: 'Augusto', Telefone: '23345335' },
+    { Id: '4', Nome: 'Clarice', Sobrenome: 'Teixeira', Telefone: '23345745' },
+    { Id: '5', Nome: 'Tati', Sobrenome: 'Cristina', Telefone: '23375345' },
+    { Id: '6', Nome: 'Diego', Sobrenome: 'Cunhado', Telefone: '23365345' }
   ]
 
 

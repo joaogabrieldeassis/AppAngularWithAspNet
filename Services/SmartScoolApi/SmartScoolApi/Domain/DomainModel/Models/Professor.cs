@@ -1,15 +1,14 @@
-﻿namespace SmartScoolApi.Models
+﻿namespace SmartScoolApi.Domain.Models
 {
-    public class Professor
+    public class Professor : Entity
     {
-        public Professor(int id, string nome)
+        public Professor(Guid id, string nome)
         {
             Id = id;
             Nome = nome;
         }
         public Professor() { }
 
-        public int Id { get; set; }
         public string Nome { get; set; }
         public List<Disciplina> Disciplinas { get; set; }
     }

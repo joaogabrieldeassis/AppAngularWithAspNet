@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SmartScoolApi.Models;
+using SmartScoolApi.Domain.Models;
 using System;
 
 namespace SmartScoolApi.Data

@@ -1,4 +1,4 @@
-﻿namespace SmartScoolApi.Models
+﻿namespace SmartScoolApi.Domain.Models
 {
     public class Disciplina
     {

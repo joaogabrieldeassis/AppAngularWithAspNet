@@ -1,3 +1,7 @@
+using SmartScoolApi.Infra.Repository;
+using SmartScoolApi.Models.Interfaces;
+using System.Collections.Generic;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+ConfigurarInjecaoDeDependencia(builder);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,3 +28,9 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+static WebApplicationBuilder ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
+{
+    builder.Services.AddScoped<IRepository, Repository>();    
+    return builder;
+}
