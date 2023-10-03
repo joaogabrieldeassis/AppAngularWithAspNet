@@ -1,4 +1,4 @@
-﻿namespace SmartScoolApi.Domain.Models
+﻿namespace SmartScoolApi.Domain.DomainModel.Models
 {
     public class Professor : Entity
     {

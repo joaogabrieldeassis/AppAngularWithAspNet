@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SmartScoolApi.Domain.Models;
+using SmartScoolApi.Domain.DomainModel.Models;
 
 namespace SmartScoolApi.Data.Mappings
 {

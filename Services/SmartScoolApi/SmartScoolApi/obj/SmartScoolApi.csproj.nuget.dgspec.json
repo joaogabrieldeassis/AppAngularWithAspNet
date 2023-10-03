@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\SmartScoolApi\\SmartScoolApi.csproj": {}
+    "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\smartscoolapi\\SmartScoolApi.csproj": {}
   },
   "projects": {
-    "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\SmartScoolApi\\SmartScoolApi.csproj": {
+    "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\smartscoolapi\\SmartScoolApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\SmartScoolApi\\SmartScoolApi.csproj",
+        "projectUniqueName": "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\smartscoolapi\\SmartScoolApi.csproj",
         "projectName": "SmartScoolApi",
-        "projectPath": "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\SmartScoolApi\\SmartScoolApi.csproj",
+        "projectPath": "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\smartscoolapi\\SmartScoolApi.csproj",
         "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
-        "outputPath": "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\SmartScoolApi\\obj\\",
+        "outputPath": "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\smartscoolapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

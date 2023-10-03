@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hftb0FLNUcQgKPCduK0bkqNLws4UEOQUhXHlDgFfhlSamjT6KMXDpiNVS+Zb2VmXqq3FdqF8gJfailDCvEs4mw==",
+  "dgSpecHash": "GONuucLQvhHzmxG6yKCMZ5I4ukxxhTn/v6pfTEgrCMV4hDUwMsH1G+vBpdIeWsCpayvPKT0/Yan3oxNJYNwBiw==",
   "success": true,
-  "projectFilePath": "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\SmartScoolApi\\SmartScoolApi.csproj",
+  "projectFilePath": "C:\\AppAngularWithAspNet\\Services\\SmartScoolApi\\smartscoolapi\\SmartScoolApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Windows\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SmartScoolApi.Models.Interfaces;
 
 namespace SmartScoolApi.Controllers
 {

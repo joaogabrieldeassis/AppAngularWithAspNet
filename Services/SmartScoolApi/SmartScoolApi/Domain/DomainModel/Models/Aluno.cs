@@ -1,6 +1,6 @@
-﻿using SmartScoolApi.Models.ValueObject;
+﻿using SmartScoolApi.Domain.DomainModel.Models.ValueObject;
 
-namespace SmartScoolApi.Domain.Models
+namespace SmartScoolApi.Domain.DomainModel.Models
 {
     public class Aluno : Entity
     {

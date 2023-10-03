@@ -1,32 +1,51 @@
-﻿using SmartScoolApi.Models.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using SmartScoolApi.Data;
+using SmartScoolApi.Domain.DomaiModel.Interfaces;
+using SmartScoolApi.Domain.DomainModel.Models;
 
 namespace SmartScoolApi.Infra.Repository
 {
-    public class Repository : IRepository
+    public class Repository<T> : IRepository<T> where T : Entity
     {
-        public void Add<T>(T entity)
+        protected readonly DataContext _context;
+        protected readonly DbSet<T> _entities;
+
+        public Repository(DataContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+            _entities = context.Set<T>();
         }
 
-        public void Delete<T>(T entity)
+        public async Task Add(T entity)
         {
-            throw new NotImplementedException();
+            await _entities.AddAsync(entity);
         }
 
-        public List<T> GetAll<T>()
+        public async Task Delete(Guid id)
         {
-            throw new NotImplementedException();
+             
+            _context.Remove(await _entities.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id));
+            await SaveChanges();
+        }        
+
+        public async Task<List<T>> GetAll()
+        {
+            return await _entities.ToListAsync();
         }
 
-        public T GetById<T>(Guid id)
+        public async Task<T> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return await _entities.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public void Update<T>(T entity)
+        public async Task Update(T entity)
         {
-            throw new NotImplementedException();
+            _entities.Update(entity);
+            await SaveChanges();
         }
+
+        public async Task<int> SaveChanges() => _context.SaveChanges();
+       
+        public void Dispose() => _context?.Dispose();
     }
 }

@@ -1,11 +1,14 @@
-﻿namespace SmartScoolApi.Models.Interfaces
+﻿using SmartScoolApi.Domain.DomainModel.Models;
+
+namespace SmartScoolApi.Domain.DomaiModel.Interfaces
 {
-    public interface IRepository
+    public interface IRepository<T> : IDisposable where T : Entity
     {
-        public void Add<T>(T entity);
-        public void Update<T>(T entity);
-        public void Delete<T>(T entity);
-        public List<T> GetAll<T>();
-        public T GetById<T>(Guid id);    
+        public Task Add(T entity);
+        public Task Update(T entity);
+        public Task Delete(Guid id);
+        public Task<List<T>> GetAll();
+        public Task<T> GetById(Guid id);
+        Task<int> SaveChanges();
     }
 }

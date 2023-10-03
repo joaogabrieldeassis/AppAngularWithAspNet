@@ -1,6 +1,5 @@
+using SmartScoolApi.Domain.DomaiModel.Interfaces;
 using SmartScoolApi.Infra.Repository;
-using SmartScoolApi.Models.Interfaces;
-using System.Collections.Generic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +30,6 @@ app.Run();
 
 static WebApplicationBuilder ConfigurarInjecaoDeDependencia(WebApplicationBuilder builder)
 {
-    builder.Services.AddScoped<IRepository, Repository>();    
+    builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();    
     return builder;
 }

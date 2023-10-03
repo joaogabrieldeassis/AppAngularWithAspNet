@@ -1,4 +1,4 @@
-﻿namespace SmartScoolApi.Models.ValueObject
+﻿namespace SmartScoolApi.Domain.DomainModel.Models.ValueObject
 {
     public class NomeCompleto
     {

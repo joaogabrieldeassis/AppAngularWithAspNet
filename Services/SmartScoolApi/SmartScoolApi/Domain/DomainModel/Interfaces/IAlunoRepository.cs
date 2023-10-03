@@ -1,9 +1,9 @@
-﻿using SmartScoolApi.Domain.Models;
+﻿using SmartScoolApi.Domain.DomainModel.Models;
 
-namespace SmartScoolApi.Domain.Interfaces
+namespace SmartScoolApi.Domain.DomaiModel.Interfaces
 {
-    public interface IAlunoRepository
+    public interface IAlunoRepository : IRepository<Aluno>
     {
-        public List<Aluno> GetAlunosByDisciplinas(Guid disciplinaId,bool includeDisciplina);
+        public Task<Aluno> GetAlunosByDisciplinas(Guid disciplinaId);
     }
 }
